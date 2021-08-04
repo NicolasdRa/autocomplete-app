@@ -5,14 +5,21 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import { useStyles } from './styles';
 
-export const Search = () => {
+interface Props {
+	handleChangeQuery: (e: unknown) => void;
+}
+
+export const Search: React.FC<Props> = ({ handleChangeQuery }) => {
 	const classes = useStyles();
+
 	return (
 		<Paper component='form' className={classes.root}>
 			<InputBase
 				className={classes.input}
 				placeholder='Search product'
 				inputProps={{ 'aria-label': 'search google maps' }}
+				onChange={handleChangeQuery}
+				defaultValue=''
 			/>
 			<IconButton
 				type='submit'

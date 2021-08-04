@@ -56,6 +56,11 @@ export const CustomRow: React.FC<Props> = ({ data }) => {
 				</TableCell>
 				<TableCell>
 					<Typography className={classes.primaryInfo}>
+						{title}
+					</Typography>
+				</TableCell>
+				<TableCell>
+					<Typography className={classes.primaryInfo}>
 						{gtin}
 					</Typography>
 				</TableCell>
