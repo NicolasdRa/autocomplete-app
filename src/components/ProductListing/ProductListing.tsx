@@ -12,43 +12,22 @@ import {
 	Typography,
 } from '@material-ui/core';
 
-import { readString } from 'react-papaparse';
-import csvFile from '../../data/products.csv';
-
 import { Search } from '../Search/Search';
 import { CustomTable } from '../CustomTable/CustomTable';
 
 import { useStyles } from './styles';
 
-export const ProductListing: React.FC = () => {
+interface Props {
+	data: any[];
+}
+
+export const ProductListing: React.FC<Props> = ({ data }) => {
 	const classes = useStyles();
 
-	const [dataArray, setDataArray] = useState<any[]>([]);
-	const [filteredArray, setFilteredArray] = useState<any[]>([]);
+	const [filteredArray, setFilteredArray] = useState<any[]>(data);
 	const [queryString, setQueryString] = useState('');
 	const [gender, setGender] = useState('');
 	const [checked, setChecked] = useState(false);
-
-	useEffect(() => {
-		readString(csvFile, {
-			delimiter: '',
-			newline: '',
-			header: true,
-			skipEmptyLines: true,
-			complete: (data) => {
-				console.log('Parsing complete', data);
-				setDataArray(data.data);
-			},
-			download: true,
-			error: (error, file) => {
-				console.log('Error while parsing:', error, file);
-			},
-		});
-	}, []);
-
-	useEffect(() => {
-		dataArray.length > 0 && setFilteredArray(dataArray);
-	}, [dataArray]);
 
 	// search filter
 	const search = (data: any[]): any[] => {
@@ -70,19 +49,22 @@ export const ProductListing: React.FC = () => {
 
 	// gender filter
 	const filterByGender = (data: any[]): any[] => {
-		if (gender !== 'unisex') {
+		if (
+			gender !== '' &&
+			(gender === 'male' || gender === 'female' || gender === 'unisex')
+		) {
 			return data.filter((item) => item.gender === gender);
 		}
 		return data;
 	};
 
 	useEffect(() => {
-		const searchFiltered = search(dataArray);
+		const searchFiltered = search(data);
 		const saleFiltered = filterByOnSale(searchFiltered);
 		const genderFiltered = filterByGender(saleFiltered);
 
 		setFilteredArray(genderFiltered);
-	}, [dataArray, queryString, gender, checked]);
+	}, [data, queryString, gender, checked]);
 
 	const handleChangeQuery = (e: any) => {
 		setQueryString(e.target.value.toLowerCase());
@@ -97,13 +79,31 @@ export const ProductListing: React.FC = () => {
 	};
 
 	return (
-		<Box>
+		<Box className={classes.container}>
 			<Box className={classes.toolbar}>
 				<Typography variant='h5' className={classes.title}>
 					Products
 				</Typography>
 				<Box className={classes.inputs}>
 					<Search handleChangeQuery={handleChangeQuery} />
+					<FormControl variant='outlined' className={classes.select}>
+						<InputLabel id='demo-simple-select-outlined-label'>
+							Filter by gender
+						</InputLabel>
+						<Select
+							labelId='demo-simple-select-outlined-label'
+							id='demo-simple-select-outlined'
+							value={gender}
+							onChange={handleChangeGenderFilter}
+							labelWidth={100}>
+							<MenuItem value=''>
+								<em>None</em>
+							</MenuItem>
+							<MenuItem value={'female'}>female</MenuItem>
+							<MenuItem value={'male'}>male</MenuItem>
+							<MenuItem value={'unisex'}>unisex</MenuItem>
+						</Select>
+					</FormControl>
 					<FormGroup row className={classes.checkbox}>
 						<FormControlLabel
 							control={
@@ -116,32 +116,9 @@ export const ProductListing: React.FC = () => {
 							label='On Sale'
 						/>
 					</FormGroup>
-					<FormControl
-						variant='outlined'
-						className={classes.formControl}>
-						<InputLabel id='demo-simple-select-outlined-label'>
-							gender
-						</InputLabel>
-						<Select
-							labelId='demo-simple-select-outlined-label'
-							id='demo-simple-select-outlined'
-							value={gender}
-							onChange={handleChangeGenderFilter}
-							label='Gender'>
-							<MenuItem value=''>
-								<em>None</em>
-							</MenuItem>
-							<MenuItem value={'female'}>female</MenuItem>
-							<MenuItem value={'male'}>male</MenuItem>
-							<MenuItem value={'unisex'}>unisex</MenuItem>
-						</Select>
-					</FormControl>
 				</Box>
 			</Box>
-
-			{dataArray.length > 0 && (
-				<CustomTable data={filteredArray.slice(0, 99)} />
-			)}
+			<CustomTable data={filteredArray} />
 		</Box>
 	);
 };

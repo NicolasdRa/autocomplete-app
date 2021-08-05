@@ -23,7 +23,7 @@ interface Props {
 		price: string;
 		sale_price: string;
 		image_link: string;
-		additional_image_link: string[];
+		additional_image_link: string;
 	};
 }
 
@@ -47,14 +47,15 @@ export const CustomRow: React.FC<Props> = ({ data }) => {
 				className={classes.root}
 				hover
 				onClick={() => setOpen(!open)}>
-				<TableCell>
+				<TableCell className={classes.firstCell}>
 					<img
+						loading='lazy'
 						src={image_link}
 						alt={title}
 						className={classes.productImg}
 					/>
 				</TableCell>
-				<TableCell>
+				<TableCell className={classes.secondCell}>
 					<Typography className={classes.primaryInfo}>
 						{title}
 					</Typography>
@@ -94,10 +95,12 @@ export const CustomRow: React.FC<Props> = ({ data }) => {
 			</TableRow>
 			<TableRow>
 				<TableCell
-					style={{ paddingBottom: 0, paddingTop: 0 }}
-					colSpan={6}>
+					style={{
+						padding: 0,
+					}}
+					colSpan={12}>
 					<Collapse in={open} timeout='auto' unmountOnExit>
-						<Box margin={1}>
+						<Box>
 							<RowExpandedContent data={additional_image_link} />
 						</Box>
 					</Collapse>

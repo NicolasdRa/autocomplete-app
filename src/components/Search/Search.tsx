@@ -1,6 +1,12 @@
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import IconButton from '@material-ui/core/IconButton';
+import {
+	FormControl,
+	IconButton,
+	InputAdornment,
+	InputLabel,
+	OutlinedInput,
+	Paper,
+	TextField,
+} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
 import { useStyles } from './styles';
@@ -13,20 +19,38 @@ export const Search: React.FC<Props> = ({ handleChangeQuery }) => {
 	const classes = useStyles();
 
 	return (
-		<Paper component='form' className={classes.root}>
-			<InputBase
-				className={classes.input}
-				placeholder='Search product'
-				inputProps={{ 'aria-label': 'search google maps' }}
+		<FormControl className={classes.textField} variant='outlined'>
+			<InputLabel htmlFor='outlined-adornment-password'>
+				Search product
+			</InputLabel>
+			<OutlinedInput
 				onChange={handleChangeQuery}
-				defaultValue=''
+				endAdornment={
+					<InputAdornment position='end'>
+						<IconButton edge='end'>
+							<SearchIcon />
+						</IconButton>
+					</InputAdornment>
+				}
+				labelWidth={100}
 			/>
-			<IconButton
-				type='submit'
-				className={classes.iconButton}
-				aria-label='search'>
-				<SearchIcon />
-			</IconButton>
-		</Paper>
+		</FormControl>
+
+		// <TextField
+		// 	label='Search product'
+		// 	variant='outlined'
+		// 	className={classes.input}
+		// 	placeholder='Search product'
+		// 	inputProps={{ 'aria-label': 'search google maps' }}
+		// 	onChange={handleChangeQuery}
+		// 	defaultValue=''
+		// />
+
+		// <IconButton
+		// 	type='submit'
+		// 	className={classes.iconButton}
+		// 	aria-label='search'>
+		// 	<SearchIcon />
+		// </IconButton>
 	);
 };

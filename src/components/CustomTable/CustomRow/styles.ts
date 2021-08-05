@@ -11,25 +11,23 @@ export const useStyles = makeStyles((theme: Theme) =>
 			},
 		},
 
+		firstCell: {
+			width: '6rem',
+		},
+
 		productImg: {
-			marginLeft: '2rem',
 			height: '4rem',
 		},
 
-		infoContainer: {
-			display: 'flex',
-			flexDirection: 'column',
-			alignContent: 'left',
+		secondCell: {
+			width: '40rem',
 		},
 
 		primaryInfo: {
-			fontSize: '.8rem',
+			fontSize: '1rem',
 			padding: '1rem 1rem .5rem 0',
-		},
-
-		secondaryInfo: {
-			fontSize: '.7rem',
-			padding: '0 1rem 1rem 0',
+			overflow: 'hidden',
+			textOverflow: 'ellipsis',
 		},
 	}),
 );

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import {
-	Paper,
 	Table,
 	TableBody,
 	TableHead,
@@ -9,7 +8,6 @@ import {
 	TableContainer,
 	TableRow,
 	TablePagination,
-	Typography,
 } from '@material-ui/core';
 
 import { CustomRow } from './CustomRow/CustomRow';
@@ -21,7 +19,7 @@ interface Column {
 }
 
 const columns: Column[] = [
-	{ title: 'Photo', align: 'left' },
+	{ title: '', align: 'left' },
 	{ title: 'Title', align: 'left' },
 	{ title: 'Id', align: 'left' },
 	{ title: 'Gender', align: 'left' },
@@ -53,12 +51,15 @@ export const CustomTable: React.FC<Props> = ({ data }) => {
 	};
 
 	return (
-		<TableContainer component={Paper} className={classes.container}>
+		<TableContainer className={classes.container}>
 			<Table aria-label='collapsible table'>
 				<TableHead>
 					<TableRow>
 						{columns.map((column) => (
-							<TableCell key={column.title} align={column.align}>
+							<TableCell
+								key={column.title}
+								align={column.align}
+								className={classes.title}>
 								{column.title}
 							</TableCell>
 						))}
@@ -66,14 +67,18 @@ export const CustomTable: React.FC<Props> = ({ data }) => {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{data.map((rowData) => (
-						// <h5 key={rowData.gtin}>{rowData.title}</h5>
-						<CustomRow key={rowData.gtin} data={rowData} />
-					))}
+					{data
+						.slice(
+							page * rowsPerPage,
+							page * rowsPerPage + rowsPerPage,
+						)
+						.map((rowData) => (
+							<CustomRow key={rowData.gtin} data={rowData} />
+						))}
 				</TableBody>
 			</Table>
 			<TablePagination
-				rowsPerPageOptions={[10, 25, 100]}
+				rowsPerPageOptions={[5, 10, 25, 100, 200]}
 				component='div'
 				count={data.length}
 				rowsPerPage={rowsPerPage}

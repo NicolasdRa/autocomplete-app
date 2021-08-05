@@ -2,17 +2,11 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		container: {
-			marginTop: '1rem',
+		generalContainer: {
+			backgroundColor: theme.palette.common.grey,
 		},
-
-		pagination: {
-			marginRight: '2rem',
-		},
-
-		title: {
-			fontSize: '1rem',
-			fontWeight: 600,
+		skeleton: {
+			width: '95vw',
 		},
 	}),
 );
