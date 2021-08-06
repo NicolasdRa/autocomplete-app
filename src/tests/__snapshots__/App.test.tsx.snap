@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <App/> should render <App/> correctly 1`] = `
+Array [
+  <div
+    className="makeStyles-root-3"
+  >
+    <header
+      className="MuiPaper-root-18 MuiAppBar-root-7 MuiAppBar-positionStatic-11 MuiAppBar-colorPrimary-14 MuiPaper-elevation4-25"
+    >
+      <div
+        className="MuiToolbar-root-46 MuiToolbar-regular-48 MuiToolbar-gutters-47"
+      >
+        <div
+          className="MuiBox-root-50 MuiBox-root-51"
+        >
+          <a
+            href="!#"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="logo"
+              className="makeStyles-logo-6"
+              src="logo-rounded.png"
+            />
+          </a>
+        </div>
+        <h6
+          className="MuiTypography-root-52 makeStyles-title-5 MuiTypography-h6-62"
+        >
+          Autocomplete App
+        </h6>
+        <button
+          aria-label="account of current user"
+          className="MuiButtonBase-root-90 MuiIconButton-root-82 MuiIconButton-colorInherit-85"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="MuiIconButton-label-89"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root-91"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"
+              />
+            </svg>
+          </span>
+          <span
+            className="MuiTouchRipple-root-231"
+          />
+        </button>
+      </div>
+    </header>
+  </div>,
+  <div
+    className="MuiBox-root-50 MuiBox-root-100 makeStyles-generalContainer-1"
+  >
+    <div
+      className="MuiBox-root-50 MuiBox-root-241 makeStyles-skeleton-2"
+    >
+      <span
+        className="MuiSkeleton-root-242 MuiSkeleton-text-243 MuiSkeleton-pulse-246"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+      />
+      <span
+        className="MuiSkeleton-root-242 MuiSkeleton-text-243"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+      />
+      <span
+        className="MuiSkeleton-root-242 MuiSkeleton-text-243 MuiSkeleton-wave-248"
+        style={
+          Object {
+            "height": undefined,
+            "width": undefined,
+          }
+        }
+      />
+    </div>
+  </div>,
+]
+`;

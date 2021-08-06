@@ -29,11 +29,13 @@ export const ProductListing: React.FC<Props> = ({ data }) => {
 	const [gender, setGender] = useState('');
 	const [checked, setChecked] = useState(false);
 
-	// search filter
+	// search filter (product & price)
 	const search = (data: any[]): any[] => {
 		if (data.length > 0 && queryString !== '') {
-			return data.filter((item) =>
-				item.title.toLowerCase().includes(queryString),
+			return data.filter(
+				(item) =>
+					item.title.toLowerCase().includes(queryString) ||
+					item.price.toString().toLowerCase().includes(queryString),
 			);
 		}
 		return data;

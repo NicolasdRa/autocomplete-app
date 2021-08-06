@@ -31,8 +31,8 @@ export const Header: React.FC = () => {
 					</Typography>
 					<IconButton
 						aria-label='account of current user'
-						aria-controls='menu-appbar'
-						aria-haspopup='true'
+						// aria-controls='menu-appbar'
+						// aria-haspopup='false'
 						onClick={() => console.log('clicked')}
 						color='inherit'>
 						<AccountCircle />

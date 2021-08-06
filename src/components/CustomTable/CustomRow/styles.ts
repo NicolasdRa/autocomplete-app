@@ -16,7 +16,8 @@ export const useStyles = makeStyles((theme: Theme) =>
 		},
 
 		productImg: {
-			height: '4rem',
+			height: '64px',
+			width: '44.3px',
 		},
 
 		secondCell: {

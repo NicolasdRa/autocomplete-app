@@ -15,6 +15,7 @@ export const useStyles = makeStyles((theme: Theme) =>
 
 		logo: {
 			width: '2rem',
+			height: '2rem',
 			marginRight: '1rem',
 		},
 	}),
