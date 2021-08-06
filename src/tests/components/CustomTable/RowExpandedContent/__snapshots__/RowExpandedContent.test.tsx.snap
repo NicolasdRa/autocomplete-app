@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <RowExpandedContent/> should render <RowExpandedContent/> correctly 1`] = `
+<WithStyles(ForwardRef(Table))>
+  <WithStyles(ForwardRef(TableBody))>
+    <WithStyles(ForwardRef(TableRow))
+      className="makeStyles-row-1"
+    >
+      <Hidden
+        smDown={true}
+      >
+        <WithStyles(ForwardRef(TableCell))
+          className="makeStyles-firstCell-2"
+        />
+      </Hidden>
+      <WithStyles(ForwardRef(TableCell))
+        className="makeStyles-secondCell-3"
+      >
+        <Styled(MuiBox)>
+          <WithStyles(ForwardRef(Typography))
+            className="makeStyles-title-4"
+            variant="subtitle2"
+          >
+            Photo Gallery
+          </WithStyles(ForwardRef(Typography))>
+        </Styled(MuiBox)>
+        <Styled(MuiBox)>
+          <img
+            alt="thumbnail"
+            className="makeStyles-img-5"
+            key="0"
+            loading="lazy"
+            src="1"
+          />
+          <img
+            alt="thumbnail"
+            className="makeStyles-img-5"
+            key="1"
+            loading="lazy"
+            src=" 2"
+          />
+          <img
+            alt="thumbnail"
+            className="makeStyles-img-5"
+            key="2"
+            loading="lazy"
+            src=" 3"
+          />
+        </Styled(MuiBox)>
+      </WithStyles(ForwardRef(TableCell))>
+    </WithStyles(ForwardRef(TableRow))>
+  </WithStyles(ForwardRef(TableBody))>
+</WithStyles(ForwardRef(Table))>
+`;

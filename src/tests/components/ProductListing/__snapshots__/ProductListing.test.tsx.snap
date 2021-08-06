@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <ProductListing/> should render <ProductListing/> correctly 1`] = `
+<Styled(MuiBox)
+  className="makeStyles-container-1"
+>
+  <Styled(MuiBox)
+    className="makeStyles-toolbar-2"
+  >
+    <Hidden
+      smDown={true}
+    >
+      <WithStyles(ForwardRef(Typography))
+        className="makeStyles-title-3"
+        variant="h5"
+      >
+        Products
+      </WithStyles(ForwardRef(Typography))>
+    </Hidden>
+    <Styled(MuiBox)
+      className="makeStyles-filters-4"
+    >
+      <Search
+        handleChangeQuery={[Function]}
+      />
+      <WithStyles(ForwardRef(FormControl))
+        className="makeStyles-select-5"
+        variant="outlined"
+      >
+        <WithStyles(ForwardRef(InputLabel))
+          id="demo-simple-select-outlined-label"
+        >
+          Filter by gender
+        </WithStyles(ForwardRef(InputLabel))>
+        <WithStyles(ForwardRef(Select))
+          id="demo-simple-select-outlined"
+          labelId="demo-simple-select-outlined-label"
+          labelWidth={100}
+          onChange={[Function]}
+          value=""
+        >
+          <WithStyles(ForwardRef(MenuItem))
+            value=""
+          >
+            <em>
+              None
+            </em>
+          </WithStyles(ForwardRef(MenuItem))>
+          <WithStyles(ForwardRef(MenuItem))
+            value="female"
+          >
+            female
+          </WithStyles(ForwardRef(MenuItem))>
+          <WithStyles(ForwardRef(MenuItem))
+            value="male"
+          >
+            male
+          </WithStyles(ForwardRef(MenuItem))>
+          <WithStyles(ForwardRef(MenuItem))
+            value="unisex"
+          >
+            unisex
+          </WithStyles(ForwardRef(MenuItem))>
+        </WithStyles(ForwardRef(Select))>
+      </WithStyles(ForwardRef(FormControl))>
+      <WithStyles(ForwardRef(FormGroup))
+        className="makeStyles-checkbox-6"
+        row={true}
+      >
+        <WithStyles(ForwardRef(FormControlLabel))
+          control={
+            <WithStyles(ForwardRef(Checkbox))
+              checked={false}
+              color="primary"
+              onChange={[Function]}
+            />
+          }
+          label="On Sale"
+        />
+      </WithStyles(ForwardRef(FormGroup))>
+      <Hidden
+        smUp={true}
+      >
+        <WithStyles(ForwardRef(Typography))
+          className="makeStyles-title-3"
+          variant="h5"
+        >
+          Products
+        </WithStyles(ForwardRef(Typography))>
+      </Hidden>
+    </Styled(MuiBox)>
+  </Styled(MuiBox)>
+  <CustomTable
+    data={
+      Array [
+        Object {
+          "additional_image_link": "testImg1.jpg, testImg2.jpg",
+          "gender": "unisex",
+          "gtin": "1",
+          "image_link": "testImg.jpg",
+          "price": "1 euro",
+          "sale_price": "0.5 euro",
+          "title": "test object",
+        },
+        Object {
+          "additional_image_link": "testImg1.jpg, testImg2.jpg",
+          "gender": "female",
+          "gtin": "1",
+          "image_link": "testImg.jpg",
+          "price": "2 euro",
+          "sale_price": "0.5 euro",
+          "title": "test object2",
+        },
+        Object {
+          "additional_image_link": "testImg1.jpg, testImg2.jpg",
+          "gender": "male",
+          "gtin": "1",
+          "image_link": "testImg.jpg",
+          "price": "3 euro",
+          "sale_price": "0.5 euro",
+          "title": "test object3",
+        },
+      ]
+    }
+  />
+</Styled(MuiBox)>
+`;

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <CustomRow/> should render <CustomRow/> correctly 1`] = `
+Array [
+  <tr
+    className="MuiTableRow-root makeStyles-root-1 MuiTableRow-hover"
+    onClick={[Function]}
+    role={null}
+  >
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root makeStyles-firstCell-2"
+    >
+      <img
+        alt="test object"
+        className="makeStyles-productImg-3"
+        loading="lazy"
+        src="testImg.jpg"
+      />
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root makeStyles-secondCell-4"
+    >
+      <p
+        className="MuiTypography-root makeStyles-primaryInfo-5 MuiTypography-body1"
+      >
+        test object
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root makeStyles-primaryInfo-5 MuiTypography-body1"
+      >
+        1
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root makeStyles-primaryInfo-5 MuiTypography-body1"
+      >
+        unisex
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root makeStyles-primaryInfo-5 MuiTypography-body1"
+      >
+        1 euro
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root makeStyles-primaryInfo-5 MuiTypography-body1"
+      >
+        0.5 euro
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root"
+    >
+      <button
+        aria-label="expand row"
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeSmall"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
+      </button>
+    </td>
+  </tr>,
+  <tr
+    className="MuiTableRow-root"
+    role={null}
+  >
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root"
+      colSpan={12}
+      style={
+        Object {
+          "padding": 0,
+        }
+      }
+    />
+  </tr>,
+]
+`;

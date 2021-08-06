@@ -33,7 +33,6 @@ Array [
         className="MuiButtonBase-root-86 MuiIconButton-root-78 MuiIconButton-colorInherit-81"
         disabled={false}
         onBlur={[Function]}
-        onClick={[Function]}
         onDragLeave={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}

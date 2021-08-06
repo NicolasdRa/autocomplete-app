@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <CustomSkeleton/> should render <CustomSkeleton/> correctly 1`] = `
+<Styled(MuiBox)
+  className="makeStyles-skeletonContainer-1"
+>
+  <WithStyles(ForwardRef(Skeleton))
+    className="makeStyles-skeletonFilters-2"
+  />
+  <WithStyles(ForwardRef(Skeleton))
+    className="makeStyles-skeletonTable-3"
+  />
+</Styled(MuiBox)>
+`;

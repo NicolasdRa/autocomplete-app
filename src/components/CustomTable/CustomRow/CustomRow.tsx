@@ -41,12 +41,16 @@ export const CustomRow: React.FC<Props> = ({ data }) => {
 		additional_image_link,
 	} = data;
 
+	const toggleExpandedContent = (): void => {
+		setOpen(!open);
+	};
+
 	return (
 		<>
 			<TableRow
 				className={classes.root}
 				hover
-				onClick={() => setOpen(!open)}>
+				onClick={toggleExpandedContent}>
 				<TableCell className={classes.firstCell}>
 					<img
 						loading='lazy'
@@ -84,7 +88,7 @@ export const CustomRow: React.FC<Props> = ({ data }) => {
 					<IconButton
 						aria-label='expand row'
 						size='small'
-						onClick={() => setOpen(!open)}>
+						onClick={toggleExpandedContent}>
 						{open ? (
 							<KeyboardArrowUpIcon />
 						) : (

@@ -75,7 +75,7 @@ export const ProductListing: React.FC<Props> = ({ data }) => {
 		setQueryString(e.target.value.toLowerCase());
 	};
 
-	const handleChangeSaleFilter = (e: any) => {
+	const handleChangeOnSaleFilter = (e: any) => {
 		setChecked(e.target.checked);
 	};
 
@@ -116,7 +116,7 @@ export const ProductListing: React.FC<Props> = ({ data }) => {
 							control={
 								<Checkbox
 									checked={checked}
-									onChange={handleChangeSaleFilter}
+									onChange={handleChangeOnSaleFilter}
 									color='primary'
 								/>
 							}
