@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Autocomplete App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with [React Hooks, Typescript & Material UI](https://github.com/NicolasdRa/autocomplete-app).
 
 ## Available Scripts
 
@@ -11,36 +11,45 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You may serve it with a static server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ### `npm install -g serve`
+    ### `serve -s build`
+  
+    or just run  
 
-### `npm run eject`
+    ### `npx serve build`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## General
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Product feed file (products.csv) is parsed and converted into JSON by means of the `react-papaparse` library in a useEffect hook in the `App` component. Alternatively, it could have been processed and served through a mock server like json server, the data fetched in the same useEffect hook and the date fed to the local state in the same way. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* The app is a `PWA`, and has been optimized bringing lighthouse report values to high scores (96, 98, 100, 100). Further optimization can still be made to bring all values to a 100. 
+   
+* `Testing` has been implemented with `Jest` and `Enyzme`. Spnapshot tests and a selection of functionality tests have been implemented. Further tests can still be implemented with more time.
 
-## Learn More
+## Components and functionality
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Search component filters by product name and price.
+* Dynamic pagination implemented with options to display from 5 to 200 rows per page.
+* Rows display required info and is expandable showing a photo gallery of the product
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Optional features
+
+* `gender` filter implemented.
+* `sale_price` checkbox filter implemented.
+* images are natively lazy loaded by browsers
+* Being a PWA loaded images are cached and are accessible offline served by the service worker.
+
+
+
