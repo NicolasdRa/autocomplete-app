@@ -6,6 +6,7 @@ import {
 	FormGroup,
 	FormControlLabel,
 	Checkbox,
+	Hidden,
 	InputLabel,
 	Select,
 	MenuItem,
@@ -66,6 +67,8 @@ export const ProductListing: React.FC<Props> = ({ data }) => {
 		const genderFiltered = filterByGender(saleFiltered);
 
 		setFilteredArray(genderFiltered);
+
+		// eslint-disable-next-line
 	}, [data, queryString, gender, checked]);
 
 	const handleChangeQuery = (e: any) => {
@@ -83,10 +86,12 @@ export const ProductListing: React.FC<Props> = ({ data }) => {
 	return (
 		<Box className={classes.container}>
 			<Box className={classes.toolbar}>
-				<Typography variant='h5' className={classes.title}>
-					Products
-				</Typography>
-				<Box className={classes.inputs}>
+				<Hidden smDown>
+					<Typography variant='h5' className={classes.title}>
+						Products
+					</Typography>
+				</Hidden>
+				<Box className={classes.filters}>
 					<Search handleChangeQuery={handleChangeQuery} />
 					<FormControl variant='outlined' className={classes.select}>
 						<InputLabel id='demo-simple-select-outlined-label'>
@@ -118,6 +123,11 @@ export const ProductListing: React.FC<Props> = ({ data }) => {
 							label='On Sale'
 						/>
 					</FormGroup>
+					<Hidden smUp>
+						<Typography variant='h5' className={classes.title}>
+							Products
+						</Typography>
+					</Hidden>
 				</Box>
 			</Box>
 			<CustomTable data={filteredArray} />

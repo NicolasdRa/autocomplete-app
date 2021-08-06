@@ -1,20 +1,15 @@
 import { useState, useEffect } from 'react';
-import { readString } from 'react-papaparse';
-
-import { Box } from '@material-ui/core';
-import Skeleton from '@material-ui/lab/Skeleton';
 import { ThemeProvider } from '@material-ui/core/styles';
-
+import { readString } from 'react-papaparse';
 import csvFile from './data/products.csv';
 
 import { Header } from './components/Header/Header';
+import { CustomSkeleton } from './components/CustomSkeleton/CustomSkeleton';
 import { ProductListing } from './components/ProductListing/ProductListing';
 
-import { useStyles } from './styles';
 import theme from './theme';
 
 function App() {
-	const classes = useStyles();
 	const [dataArray, setDataArray] = useState<any[]>([]);
 	const [loading, setLoading] = useState(false);
 
@@ -41,17 +36,7 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<Header />
-			<Box className={classes.generalContainer}>
-				{loading ? (
-					<Box className={classes.skeleton}>
-						<Skeleton />
-						<Skeleton animation={false} />
-						<Skeleton animation='wave' />
-					</Box>
-				) : (
-					<ProductListing data={dataArray} />
-				)}
-			</Box>
+			{loading ? <CustomSkeleton /> : <ProductListing data={dataArray} />}
 		</ThemeProvider>
 	);
 }

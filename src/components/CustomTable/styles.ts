@@ -4,6 +4,10 @@ export const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
 		container: {
 			marginTop: '1rem',
+
+			[theme.breakpoints.down('sm')]: {
+				overflowX: 'scroll',
+			},
 		},
 
 		pagination: {

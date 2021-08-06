@@ -1,6 +1,6 @@
-import { createTheme } from '@material-ui/core/styles';
+import { unstable_createMuiStrictModeTheme as createMuiTheme } from '@material-ui/core/styles';
 
-export default createTheme({
+export default createMuiTheme({
 	palette: {
 		primary: {
 			main: 'hsl(229, 25%, 31%)',
@@ -27,8 +27,8 @@ export default createTheme({
 	breakpoints: {
 		values: {
 			xs: 0,
-			sm: 375,
-			md: 960,
+			sm: 415,
+			md: 768,
 			lg: 1366,
 			xl: 1920,
 		},

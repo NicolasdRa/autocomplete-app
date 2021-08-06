@@ -2,21 +2,20 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
-		root: {
-			flexGrow: 1,
-		},
-
-		menuButton: {
-			marginRight: theme.spacing(2),
-		},
-		title: {
-			flexGrow: 1,
-		},
-
 		logo: {
 			width: '2rem',
 			height: '2rem',
-			marginRight: '1rem',
+			marginLeft: '.5rem',
+		},
+
+		title: {
+			flexGrow: 1,
+			marginLeft: '1.5rem',
+
+			[theme.breakpoints.down('sm')]: {
+				flexGrow: 0,
+				margin: '0 auto .2rem auto',
+			},
 		},
 	}),
 );
